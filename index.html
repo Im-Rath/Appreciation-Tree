@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.png">
+  <title>The Appreciation Tree</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e6f5e6;
+      overflow-x: hidden;
+    }
+    nav {
+      width: 100%;
+      background-color: white;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      z-index: 100;
+    }
+    nav img#logo {
+      height: 60px;
+      margin-bottom: 0.5rem;
+    }
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    nav ul li {
+      list-style: none;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    nav ul li a:hover {
+      color: #2e8b57;
+    }
+    .tree-container {
+      margin-top: 130px;
+      padding: 1rem;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .tree-container img {
+      width: 140%;
+      max-width: none;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .tag {
+      position: absolute;
+      background: white;
+      border: 2px solid #66bb6a;
+      border-radius: 6px;
+      padding: 0.3rem 0.5rem;
+      font-size: 0.6rem;
+      color: #333;
+      text-align: center;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+      transform: translate(-50%, -50%) rotate(-3deg);
+      white-space: normal;
+      
+      min-width: 50px;
+      width: fit-content;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .tag::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 12px;
+      background-color: #555;
+    }
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      nav img#logo {
+        height: 45px;
+        margin-bottom: 0;
+      }
+      nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 0.5rem;
+      }
+      nav ul li a {
+        font-size: 0.9rem;
+      }
+      .tree-container {
+        margin-top: 150px;
+        padding: 0.5rem;
+      }
+      .tag {
+        font-size: 0.45rem;
+        padding: 0.3rem 0.5rem;
+        width: fit-content;
+      }
+    }
+      nav img#logo {
+        height: 50px;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      nav ul li a {
+        font-size: 0.95rem;
+      }
+      .tree-container {
+        margin-top: 160px;
+        padding: 0.5rem;
+      }
+      .tag {
+        font-size: 0.5rem;
+        padding: 0.3rem 0.5rem;
+        width: fit-content;
+      }
+  .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      position: absolute;
+      right: 2rem;
+      top: 1rem;
+      z-index: 101;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <img id="logo" src="logo.png" alt="The Appreciation Tree Logo">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="submit.html">Submit</a></li>
+      <li><a href="allMessages.html">All Messages</a></li>
+    </ul>
+  </nav>
+
+  <div class="tree-container">
+    <img src="tree.jpg" alt="Tree Background">
+    <div class="tag" style="top: 28%; left: 60%;">You're doing better than you think</div>
+    <div class="tag" style="top: 45%; left: 38%;">Thank you for being you</div>
+    <div class="tag" style="top: 55%; left: 30%;">You bring joy just by existing</div>
+    <div class="tag" style="top: 38%; left: 45%;">You inspire more people than you realize</div>
+    <div class="tag" style="top: 65%; left: 60%;">Stay strong</div>
+    <div class="tag" style="top: 30%; left: 20%;">You’re not alone</div>
+    <div class="tag" style="top: 42%; left: 70%;">The world is better with you in it</div>
+  </div>
+<script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+</body>
+</html>
